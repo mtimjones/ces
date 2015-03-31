@@ -54,25 +54,25 @@ void SystemMovementFunction( World *world, WINDOW *win, UserInput *input )
             switch( input->key )
             {
                case 'w':
-                  if ( world->location[ entity ].y > 0 ) 
+                  if ( world->location[ entity ].y > 1 ) 
                   {
                      world->location[ entity ].y--;
                   }
                   break;
                case 'a':
-                  if ( world->location[ entity ].x > 0 )
+                  if ( world->location[ entity ].x > 1 )
                   {
                      world->location[ entity ].x--;
                   }
                   break;
                case 's':
-                  if ( world->location[ entity ].y < NLINES-1 ) 
+                  if ( world->location[ entity ].y < NLINES-2 ) 
                   {
                      world->location[ entity ].y++;
                   }
                   break;
                case 'd':
-                  if ( world->location[ entity ].x < NCOLS-1 )
+                  if ( world->location[ entity ].x < NCOLS-2 )
                   {
                      world->location[ entity ].x++;
                   }

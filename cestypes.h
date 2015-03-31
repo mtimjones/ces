@@ -3,6 +3,8 @@
 #define NLINES      22
 #define NCOLS       68
 
+#define TIME_DELTA  100000
+
 typedef struct
 {
    int key_active;

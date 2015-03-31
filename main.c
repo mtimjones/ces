@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <curses.h>
+#include <sys/time.h>
 #include "cestypes.h"
 
 static WINDOW *mainwin;
@@ -82,9 +83,22 @@ void getInput( UserInput *input )
 
 }
 
+unsigned long long getTimestamp( void )
+{
+   struct timeval tv;
+   unsigned long long t1;
+
+   gettimeofday( &tv, NULL );
+
+   t1 = ( tv.tv_sec * 1000000 ) + tv.tv_usec;
+
+   return t1;
+}
+
 int main( int argc, char *argv[] )
 {
    UserInput input;
+   unsigned long long curTime;
 
    input.key_active = input.mouse_active = 0;
 
@@ -103,6 +117,8 @@ int main( int argc, char *argv[] )
    createEnemy( &world,  6, 17 );
    createEnemy( &world, 60, 17 );
 
+   curTime = getTimestamp( );
+
    while ( 1 )
    {
       getInput( &input );
@@ -113,6 +129,9 @@ int main( int argc, char *argv[] )
       SystemDisplayFunction( &world, mainwin );
 
       wrefresh( mainwin );
+
+      while ( getTimestamp( ) < curTime + TIME_DELTA );
+      curTime += TIME_DELTA;
 
    }
 
