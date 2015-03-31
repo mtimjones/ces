@@ -24,13 +24,13 @@ typedef struct
 typedef struct
 {
    char type;
+   
 } ComponentAppearance;
 
 typedef struct
 {
    int hp;
 } ComponentHealth;
-
 
 typedef enum
 {
@@ -41,6 +41,7 @@ typedef enum
    COMPONENT_APPEARANCE = 1 << 3,
    COMPONENT_HEALTH     = 1 << 4,
    COMPONENT_SCRIPT     = 1 << 5,
+   COMPONENT_BOMB       = 1 << 6,
 } Component;
 
 #define MAX_ENTITIES   10

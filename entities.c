@@ -90,3 +90,25 @@ unsigned int createEnemy( World *world, int x, int y )
 }
 
 
+unsigned int createBomb( World *world, int x, int y )
+{
+   int entity;
+
+   entity = createEntity( world );
+
+   if ( entity < MAX_ENTITIES )
+   {
+
+      world->mask[ entity ] = COMPONENT_BOMB     |
+                              COMPONENT_LOCATION ;
+
+      world->location[ entity ].x = x;
+      world->location[ entity ].y = y;
+
+      world->appearance[ entity ].type = 0;
+
+   }
+
+   return entity;
+}
+

@@ -4,6 +4,7 @@
 #include "cestypes.h"
 
 
+#if 0
 void SystemAttackFunction( World *world, WINDOW *win, UserInput *input )
 {
    int entity;
@@ -30,6 +31,21 @@ void SystemAttackFunction( World *world, WINDOW *win, UserInput *input )
          }
 
       }
+   }
+
+   return;
+}
+#endif
+
+void SystemAttackFunction( World *world, WINDOW *win, UserInput *input )
+{
+   int entity;
+
+   if ( input->mouse_active )
+   {
+      input->mouse_active = 0;
+
+      (void)createBomb( world, input->x, input->y );
    }
 
    return;
