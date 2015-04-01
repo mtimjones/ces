@@ -23,8 +23,7 @@ typedef struct
 
 typedef struct
 {
-   char type;
-   
+   char state;
 } ComponentAppearance;
 
 typedef struct
@@ -44,7 +43,7 @@ typedef enum
    COMPONENT_BOMB       = 1 << 6,
 } Component;
 
-#define MAX_ENTITIES   10
+#define MAX_ENTITIES   20
 
 typedef struct
 {

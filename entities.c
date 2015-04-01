@@ -54,9 +54,6 @@ unsigned int createPlayer( World *world, int x, int y )
 
       world->location[ entity ].x = x;
       world->location[ entity ].y = y;
-
-      world->appearance[ entity ].type = 'P';
-
    }
 
    return entity;
@@ -80,10 +77,7 @@ unsigned int createEnemy( World *world, int x, int y )
       world->location[ entity ].x = x;
       world->location[ entity ].y = y;
 
-      world->appearance[ entity ].type = 'E';
-
       world->health[ entity ].hp = 3;
-
    }
 
    return entity;
@@ -105,7 +99,7 @@ unsigned int createBomb( World *world, int x, int y )
       world->location[ entity ].x = x;
       world->location[ entity ].y = y;
 
-      world->appearance[ entity ].type = 0;
+      world->appearance[ entity ].state = 0;
 
    }
 
