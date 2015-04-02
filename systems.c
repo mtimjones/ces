@@ -132,50 +132,63 @@ void SystemDisplayFunction( World *world, WINDOW *win )
 
             if ( world->appearance[ entity ].state == 0 )
             {
-               mvwprintw( win, y, x, "#" );
+               mvwprintw( win, y, x, "*" );
             } 
-            else if (world->appearance[ entity ].state == 3 )
+            else if (world->appearance[ entity ].state == 4 )
             {
                mvwprintw( win, y  , x  , " " );
-               mvwprintw( win, y-1, x  , "#" );
-               mvwprintw( win, y+1, x  , "#" );
-               mvwprintw( win, y  , x-1, "#" );
-               mvwprintw( win, y  , x+1, "#" );
+               mvwprintw( win, y-1, x-1, "*" );
+               mvwprintw( win, y-1, x  , "*" );
+               mvwprintw( win, y-1, x+1, "*" );
+               mvwprintw( win, y  , x-1, "*" );
+               mvwprintw( win, y  , x+1, "*" );
+               mvwprintw( win, y+1, x-1, "*" );
+               mvwprintw( win, y+1, x  , "*" );
+               mvwprintw( win, y+1, x+1, "*" );
             }
-            else if (world->appearance[ entity ].state == 6 )
-            {
-               mvwprintw( win, y-1, x  , " " );
-               mvwprintw( win, y+1, x  , " " );
-               mvwprintw( win, y  , x-1, " " );
-               mvwprintw( win, y  , x+1, " " );
-               mvwprintw( win, y-1, x-1, "#" );
-               mvwprintw( win, y-1, x+1, "#" );
-               mvwprintw( win, y+1, x-1, "#" );
-               mvwprintw( win, y+1, x+1, "#" );
-            }
-            else if (world->appearance[ entity ].state == 9 )
+            else if (world->appearance[ entity ].state == 8 )
             {
                mvwprintw( win, y-1, x-1, " " );
+               mvwprintw( win, y-1, x  , " " );
                mvwprintw( win, y-1, x+1, " " );
+               mvwprintw( win, y  , x-1, " " );
+               mvwprintw( win, y  , x+1, " " );
                mvwprintw( win, y+1, x-1, " " );
+               mvwprintw( win, y+1, x  , " " );
                mvwprintw( win, y+1, x+1, " " );
-               mvwprintw( win, y-2, x  , "#" );
-               mvwprintw( win, y  , x-2, "#" );
-               mvwprintw( win, y  , x+2, "#" );
-               mvwprintw( win, y+2, x  , "#" );
+               mvwprintw( win, y-2, x-1, "*" );
+               mvwprintw( win, y-2, x  , "*" );
+               mvwprintw( win, y-2, x+1, "*" );
+               mvwprintw( win, y+2, x-1, "*" );
+               mvwprintw( win, y+2, x  , "*" );
+               mvwprintw( win, y+2, x+1, "*" );
+               mvwprintw( win, y-1, x+2, "*" );
+               mvwprintw( win, y  , x+2, "*" );
+               mvwprintw( win, y+1, x+2, "*" );
+               mvwprintw( win, y-1, x-2, "*" );
+               mvwprintw( win, y  , x-2, "*" );
+               mvwprintw( win, y+1, x-2, "*" );
             }
             else if (world->appearance[ entity ].state == 12 )
             {
+               mvwprintw( win, y-2, x-1, " " );
                mvwprintw( win, y-2, x  , " " );
-               mvwprintw( win, y  , x-2, " " );
-               mvwprintw( win, y  , x+2, " " );
+               mvwprintw( win, y-2, x+1, " " );
+               mvwprintw( win, y+2, x-1, " " );
                mvwprintw( win, y+2, x  , " " );
-               mvwprintw( win, y-2, x-2, "#" );
-               mvwprintw( win, y-2, x+2, "#" );
-               mvwprintw( win, y+2, x-2, "#" );
-               mvwprintw( win, y+2, x+2, "#" );
+               mvwprintw( win, y+2, x+1, " " );
+               mvwprintw( win, y-1, x+2, " " );
+               mvwprintw( win, y  , x+2, " " );
+               mvwprintw( win, y+1, x+2, " " );
+               mvwprintw( win, y-1, x-2, " " );
+               mvwprintw( win, y  , x-2, " " );
+               mvwprintw( win, y+1, x-2, " " );
+               mvwprintw( win, y-2, x-2, "*" );
+               mvwprintw( win, y-2, x+2, "*" );
+               mvwprintw( win, y+2, x-2, "*" );
+               mvwprintw( win, y+2, x+2, "*" );
             }
-            else if (world->appearance[ entity ].state == 15 )
+            else if (world->appearance[ entity ].state == 16 )
             {
                mvwprintw( win, y-2, x-2, " " );
                mvwprintw( win, y-2, x+2, " " );

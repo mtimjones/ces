@@ -77,7 +77,7 @@ unsigned int createEnemy( World *world, int x, int y )
       world->location[ entity ].x = x;
       world->location[ entity ].y = y;
 
-      world->health[ entity ].hp = 3;
+      world->health[ entity ].hp = 5;
    }
 
    return entity;
